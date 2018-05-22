@@ -1,0 +1,43 @@
+@import "variables";
+
+.show {
+  &-enter, &-leave-to { opacity: 0; }
+  &-enter-to, &-leave { opacity: 1; }
+}
+
+.drive-up {
+  &-enter, &-leave-to {
+    @include transform(translate3d(0, 468rem, 0));
+    &.translate {
+      @include transform(translate(0, 468rem, 0));
+    }
+  }
+  &-enter-to, &-leave {
+    @include transform(translate3d(0, 0, 0));
+    &.translate {
+      @include transform(translate(0, 0, 0));
+    }
+  }
+  &-enter-active { transition: transform $transition-fast; }
+  &-leave-active { transition: transform $transition-fast; }
+}
+
+.title-transition {
+  &-enter, &-leave-to { opacity: 0; }
+  &-enter-to, &-leave { opacity: 1; }
+  &-enter-active { transition: opacity .4s ease-in; }
+  &-leave-active { transition: opacity .4s cubic-bezier(0,1,0,1); }
+}
+
+.no-transition-animation {
+  transition-duration: 0s !important;
+  transition: transform 0s ease !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.no-scale {
+  transform: scale3d(1, 1, 1) !important;
+}

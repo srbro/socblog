@@ -1,0 +1,90 @@
+@import "variables";
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 40rem;
+  font-weight: 300;
+  height: 90rem;
+  position: absolute;
+}
+
+body:not(.disable-hover) .item:hover {
+  color: $blue-hover;
+}
+body:not(.disable-hover) .item-row:hover {
+  color: $blue-hover;
+}
+
+.label {
+  @include text-ellipsis;
+  transform-origin: left center;
+  text-rendering: optimizeSpeed;
+  transform: scale(1, 1);
+
+  &.is-selected {
+    color: $blue;
+    font-weight: 400;
+    transform: scale(1.2, 1.2);
+  }
+}
+
+.day-name { // Events and Date
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  color: $blue;
+  font-size: 24rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+// all
+.item-row {
+  transition: transform .1s;
+  z-index: 3;
+}
+$elements: 17;
+@for $i from 7 to 2 {
+  .item-row:nth-child(-n+#{$i}) {
+    top: ($i*90)-330rem;
+  }
+}
+@for $i from 1 to 3 {
+  .item-row:nth-child(-n+#{$i}) {
+    top: -($i*90rem);
+  }
+}
+.item-row:nth-child(8) {
+  top: 400rem;
+}
+
+@for $i from 9 to $elements {
+  .item-row:nth-child(n+#{$i}) {
+    top: ($i*90)-270rem;
+  }
+}
+// SAMSUNG
+@for $i from 7 to 2 {
+  .samsung-item-row:nth-child(-n+#{$i}) {
+    top: ($i*90)-330rem;
+  }
+}
+@for $i from 1 to 3 {
+  .samsung-item-row:nth-child(-n+#{$i}) {
+    top: -($i*90rem);
+  }
+}
+.samsung-item-row:nth-child(8) {
+  top: 408rem;
+}
+
+@for $i from 9 to $elements {
+  .samsung-item-row:nth-child(n+#{$i}) {
+    top: ($i*90)-270rem;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}

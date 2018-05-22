@@ -1,0 +1,101 @@
+@import "variables";
+
+.card-container {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-shrink: 0;
+  background-position: top center, bottom center;
+  background-repeat: no-repeat, no-repeat;
+  transform: scale3d(1, 1, 1);  // adds a layer, less repainting
+  transition: transform 0.3s ease;
+  box-shadow: 0 11rem 16rem 0 rgba($black, 0.18);
+  will-change: transform, box-shadow;
+
+  .description {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    left: 0;
+    font-size: 25rem;
+    font-family: "Roboto Condensed";
+    font-weight: 400;
+    width: 100%;
+    color: rgba($black, 0.5);
+    background-color: $white;
+    transform: scale3d(1, 1, 1); // adds a layer, less repainting
+    box-shadow: 0 0 16rem 0 rgba($black, 0.15);
+    will-change: box-shadow;
+
+    .first-row {
+      font-size: 30rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+    }
+
+    &.faster-animation {
+      background-color: $blue;
+      color: rgba($white, .5);
+      .first-row { color: $white; }
+    }
+  }
+
+  &.see-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $white;
+    background: $blue-medium;
+    font-family: $font-alternative;
+    font-size: 46rem;
+    text-align: center;
+    font-stretch: condensed;
+    font-weight: 100;
+    .main {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+    .subtitle {
+      width: 100%;
+      font-size: 25rem;
+      font-weight: 400;
+      opacity: 0.5;
+      color: rgba($white, .5);
+    }
+    &.is-selected {
+      background-color: $blue;
+    }
+    body:not(.disable-hover) &:hover {
+      background-color: $blue-hover;      
+    }
+  }
+  &.is-selected{
+    z-index: 10;
+    transform: scale3d(1.13, 1.13, 1);
+    box-shadow: 0 29rem 80rem 0 rgba($black, 0.35);
+    .description {
+      box-shadow: 0 10rem 55rem 3rem rgba($black, 0.5);
+    }
+  }
+  &.is-selected, body:not(.disable-hover) &:hover {
+    .description {
+      color: rgba($white, .5);
+      background-color: $blue;
+      .first-row { color: $white; }
+      .timeline {
+        box-shadow: 0 6rem 8rem -1rem rgba($black, 0.5);
+      }
+    }
+  }
+  body:not(.disable-hover) &:hover {
+    .description {
+      background-color: $blue-hover;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "variables";
+@import "functions";
+
+@mixin font-face($name, $filename, $weight, $style) {
+  @font-face {
+    font-family: "#{$name}";
+    src: url('../../static/#{$current-provider}/fonts/#{$filename}.woff2') format('woff2'),
+    url('../../static/#{$current-provider}/fonts/#{$filename}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@each $font in $fonts {
+  $name: map-get($font, name);
+  $filename: str-replace(map-get($font, name), ' ') + map-get($font, weight) + map-get($font, style);
+  $weight: map-get($font, weight);
+  $style: map-get($font, style);
+
+  @include font-face($name, $filename, $weight, $style);
+}

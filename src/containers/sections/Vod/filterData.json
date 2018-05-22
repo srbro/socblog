@@ -1,0 +1,44 @@
+{
+  "catalogues": {
+    "items": [],
+    "description": {
+      "title": "ondemand_continuewatching_seeall_catalogues",
+      "titleAbove": "${this.loc('home_ondemand')} ${this.loc('ondemand_criteria')}  ${this.loc('ondemand_continuewatching_seeall_catalogues')}",
+      "titleBelow": "ondemand_categories_description",
+      "svgId": "vodlanding"
+    }
+  },
+  "categories": {
+    "items": [],
+    "description": {
+      "title": "ondemand_categories",
+      "titleAbove": "${this.loc('home_ondemand')} ${this.loc('ondemand_criteria')}  ${this.loc('ondemand_categories')}",
+      "titleBelow": "ondemand_catalogues_description",
+      "svgId": "vodlanding"
+    }
+  },
+  "genres": {
+    "items": [],
+    "description": {
+      "title": "ondemand_genres",
+      "titleAbove": "${this.loc('home_ondemand')} ${this.loc('ondemand_criteria')}  ${this.loc('ondemand_genres')}",
+      "titleBelow": "ondemand_genres_description",
+      "svgId": "vodlanding"
+    }
+  },
+  "sort": {
+    "items": [
+      { "id": "AZ", "label": "general_sort_az", "type": "ASC" },
+      { "id": "DATE_ADDED", "label": "general_sort_dateadded", "type": "DESC" },
+      { "id": "RELEASE_DATE", "label": "general_sort_releasedate", "type": "ASC" },
+      { "id": "RATING", "label": "general_sort_rating", "type": "ASC" },
+      { "id": "DURATION", "label": "general_sort_duration", "type": "ASC" }
+    ],
+    "description": {
+      "title": "general_sort",
+      "titleAbove": "${this.loc('home_ondemand')} ${this.loc('ondemand_criteria')}  ${this.loc('general_sort')}",
+      "titleBelow": "ondemand_sort_description",
+      "svgId": "vodlanding"
+    }
+  }
+}

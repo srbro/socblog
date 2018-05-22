@@ -1,0 +1,58 @@
+{
+  "web" : {
+    "name": "web",
+    "animations": "default",
+    "ownAssets": false,
+    "autoprefixer": {
+      "browsers": ["last 2 versions", "chrome > 25"]
+    },
+    "babel" : {
+      "presets": ["es2015", "stage-2"],
+      "plugins": ["transform-runtime"]
+    }
+  },
+  "samsung" : {
+    "name": "samsung",
+    "animations": "better",
+    "ownAssets": true,
+    "autoprefixer": {
+      "browsers": ["last 5 versions", "chrome > 25"]
+    },
+    "babel" : {
+      "presets": ["es2015", "stage-0"],
+      "plugins": ["transform-runtime"]
+    }
+  },
+  "lg" : {
+    "name": "lg",
+    "animations": "default",
+    "ownAssets": false,
+    "autoprefixer": {
+      "browsers": ["last 5 versions", "chrome > 25"]
+    },
+    "babel" : {
+      "presets": ["es2015", "stage-2"],
+      "plugins": ["transform-runtime"]
+    }
+  },
+  "androidtv" : {
+    "name": "androidtv",
+    "animations": "default",
+    "ownAssets": false,
+    "browserslist": ["Android"],
+    "babel" : {
+      "presets": ["es2015", "stage-2"],
+      "plugins": ["transform-runtime"]
+    }
+  },
+  "stb" : {
+    "name": "stb",
+    "animations": "default",
+    "ownAssets": false,
+    "browserslist": ["Android"],
+    "babel" : {
+      "presets": ["es2015", "stage-2"],
+      "plugins": ["transform-runtime"]
+    }
+  }
+}

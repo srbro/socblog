@@ -1,0 +1,61 @@
+[
+  {
+    "id": "Home",
+    "name": "general_navigation_home",
+    "path": "/nav/home"
+  },
+  {
+    "id": "Guide",
+    "name": "general_navigation_guide",
+    "path": "",
+    "itemsSub": [
+      {
+        "id": "NowTv",
+        "name": "stb_guide_nowtv",
+        "path": "/nav/nowtv"
+      },
+      {
+        "id": "Guide",
+        "name": "stb_guide_tvchannels",
+        "path": "/nav/tvchannels"
+      },
+      {
+        "id": "Radio",
+        "name": "stb_guide_radiostations",
+        "path": "/nav/radio"
+      }
+    ]
+  },
+  {
+    "id": "VodLanding",
+    "name": "general_navigation_ondemand",
+    "path": "/nav/vod-landing"
+  },
+  {
+    "id": "MyLibrary",
+    "name": "general_navigation_mylibrary",
+    "path": "/nav/my-library",
+    "itemsSub": [
+      {
+        "id": "Reminders",
+        "name": "mylibrary_reminder",
+        "path": "/nav/reminders"
+      },
+      {
+        "id": "Favorites",
+        "name": "mylibrary_favorites",
+        "path": "/nav/favorites"
+      }
+    ]
+  },
+  {
+    "id": "Settings",
+    "name": "general_navigation_settings",
+    "path": "/nav/settings"
+  },
+  {
+    "id": "Watch",
+    "name": "stb_general_watch_button",
+    "path": "/nav/settings"
+  }
+]

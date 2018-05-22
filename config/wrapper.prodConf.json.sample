@@ -1,0 +1,74 @@
+{
+  "linux" : {
+    "samsung": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-samsung.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "",
+      "tizenSdkLocation": "/home/jenkins/sdk_packages/tizen_studio/tools/ide/bin",
+      "certificate": "uc"
+    },
+    "lg": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-lg.git",
+      "branch": "master",
+      "localPortal": false,
+      "portalInWrapper": "",
+      "aresSdkLocation": "/home/jenkins/sdk_packages/webos/CLI/bin"
+    },
+    "androidtv": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-androidtv.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "app/src/main/assets/",
+      "androidSdkLocation": "/home/jenkins/sdk_packages/androidtv"
+    }
+  },
+  "darwin" : {
+    "samsung": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-samsung.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "",
+      "tizenSdkLocation": "/Users/vladimir.aleksic/tizen-studio/tools/ide/bin",
+      "certificate": "uc"
+    },
+    "lg": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-lg.git",
+      "branch": "master",
+      "localPortal": false,
+      "portalInWrapper": "",
+      "aresSdkLocation": "/opt/webOS_TV_SDK/CLI/bin"
+    },
+    "androidtv": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-androidtv.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "app/src/main/assets/",
+      "androidSdkLocation": "/Users/vladimir.aleksic/Library/Android/sdk"
+    }
+  },
+  "win32" : {
+    "samsung": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-samsung.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "",
+      "tizenSdkLocation": "/Users/vladimir.aleksic/tizen-studio/tools/ide/bin",
+      "certificate": "uc"
+    },
+    "lg": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-lg.git",
+      "branch": "master",
+      "localPortal": false,
+      "portalInWrapper": "",
+      "aresSdkLocation": "/opt/webOS_TV_SDK/CLI/bin"
+    },
+    "androidtv": {
+      "repo": "git@gitlab.united.cloud:uc-integrated-devices/chameleon-androidtv.git",
+      "branch": "master",
+      "localPortal": true,
+      "portalInWrapper": "app/src/main/assets/",
+      "androidSdkLocation": "/Users/vladimir.aleksic/Library/Android/sdk"
+    }
+  }
+}

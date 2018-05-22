@@ -1,0 +1,32 @@
+@import "variables";
+
+html, body, ul, ol, li, form, fieldset, legend, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+fieldset,img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.6666666px;
+  // background-color: #000000;
+}
+
+body {
+  font-family: $font-default;
+  // color: $blue-dark;
+}

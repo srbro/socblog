@@ -1,0 +1,46 @@
+{
+  "sort": {
+    "items": [
+      { "id": "AZ", "label": "general_sort_az", "type": "ASC" },
+      { "id": "POSITION", "label": "general_sort_position", "type": "ASC" },
+      { "id": "RECOMMENDED", "label": "general_sort_recommended" }
+    ],
+    "description": {
+      "title": "general_sort",
+      "titleAbove": "Guide  //  Now TV",
+      "titleBelow": "stb_guide_nowtv_sortevents_description",
+      "svgId": "selection-nowtv"
+    }
+  },
+  "categories": {
+    "items": [],
+    "description": {
+      "title": "stb_guide_categories",
+      "titleAbove": "Guide  //  Now TV",
+      "titleBelow": "stb_guide_radio_categories_description",
+      "svgId": "selection-nowtv"
+    }
+  },
+  "now": {
+    "items": [
+      { "id": -1, "label": "guide_nowtv_before" },
+      { "id": 0, "label": "guide_nowtv_now" },
+      { "id": 1, "label": "guide_nowtv_next" }
+    ],
+    "description": {
+      "title": "guide_nowtv_now",
+      "titleAbove": "Guide  //  Now TV",
+      "titleBelow": "select_event_period",
+      "svgId": "selection-nowtv"
+    }
+  },
+  "genres": {
+    "items": [],
+    "description": {
+      "title": "ondemand_genre",
+      "titleAbove": "Guide  //  Radio",
+      "titleBelow": "Lorem ipsum dolor sit amet consectetur.",
+      "svgId": "selection-radio"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "functions";
+@import "fonts";
+@import "reset";
+@import "transitions";
+
+.gui-wrapper {
+  height: 1080rem;
+  overflow: hidden;
+  position: relative;
+  width: 1920rem;
+}
+
+.fake-video {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.live-flag{
+  font-size: 20rem;
+  background: #c02114;
+  color: white;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 2px 10px;
+  display: inline-flex;
+}

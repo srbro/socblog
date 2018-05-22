@@ -1,0 +1,11 @@
+{
+  "categories": {
+    "items": [],
+    "description": {
+      "title": "Favorites",
+      "titleAbove": "Guide  //  Now TV",
+      "titleBelow": "Filter by event categories.",
+      "svgId": "settings-favorites"
+    }
+  }
+}

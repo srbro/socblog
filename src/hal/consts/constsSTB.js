@@ -1,0 +1,40 @@
+export const PLATFORM = 'stb_kaon'
+
+export const KEY_MAP = {
+  166: 'SCROLLUP', // KEYCODE_CHANNEL_UP',
+  167: 'SCROLLDOWN', // KEYCODE_CHANNEL_DOWN',
+  19: 'UP', // 'KEYCODE_DPAD_UP',
+  20: 'DOWN', // 'KEYCODE_DPAD_DOWN',
+  21: 'LEFT', // 'KEYCODE_DPAD_LEFT',
+  22: 'RIGHT', // 'KEYCODE_DPAD_RIGHT',
+  23: 'OK', // 'KEYCODE_DPAD_CENTER', // OK
+  7: '0',
+  8: '1',
+  9: '2',
+  10: '3',
+  11: '4',
+  12: '5',
+  13: '6',
+  14: '7',
+  15: '8',
+  16: '9',
+  4: 'BACK', // 'KEYCODE_BACK',
+  86: 'STOP', // 'KEYCODE_MEDIA_STOP',
+  78: 'NUM_KEYBOARD', // 'KEYCODE_NUM'
+  85: 'PLAYPAUSE', // 'KEYCODE_MEDIA_PLAY_PAUSE', // ON Sony only pause
+  126: 'PLAY', // Sony
+  127: 'PAUSE', // Philips
+  89: 'RW', // 'KEYCODE_MEDIA_REWIND', // RW
+  90: 'FF', // 'KEYCODE_MEDIA_FAST_FORWARD', // FF
+  111: 'EXIT',
+  170: 'EXIT',
+  130: 'RECORD', // KEYCODE_MEDIA_RECORD
+  172: 'GUIDE',
+  174: 'BOOKMARK', // KEYCODE_BOOKMARK
+  183: 'RED', // KEYCODE_PROG_RED
+  184: 'GREEN', // KEYCODE_PROG_GREEN
+  185: 'YELLOW', // KEYCODE_PROG_YELLOW
+  186: 'BLUE', // KEYCODE_PROG_BLUE
+  233: 'TELETEXT', // KEYCODE_TV_TELETEXT
+  229: 'PREVIOUS' // 'KEYCODE_LAST_CHANNEL',
+}

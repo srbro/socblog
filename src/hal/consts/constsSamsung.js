@@ -1,0 +1,31 @@
+export const PLATFORM = 'samsung_tizen'
+
+export const KEY_MAP = {
+  13: 'OK',
+  37: 'LEFT',
+  38: 'UP',
+  39: 'RIGHT',
+  40: 'DOWN',
+  10009: 'BACK',
+  10182: 'EXIT',
+  427: 'SCROLLUP',
+  428: 'SCROLLDOWN',
+  48: '0',
+  49: '1',
+  50: '2',
+  51: '3',
+  52: '4',
+  53: '5',
+  54: '6',
+  55: '7',
+  56: '8',
+  57: '9',
+  417: 'FF',
+  19: 'PAUSE',
+  415: 'PLAY',
+  10252: 'PLAYPAUSE',
+  412: 'RW',
+  431: 'STOP',
+  10133: 'KEY_MENU',
+  458: 'GUIDE'
+}
