@@ -13,7 +13,7 @@ module.exports = function (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai'],
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec', 'coverage', 'html'],
     files: ['./index.js'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
@@ -28,6 +28,15 @@ module.exports = function (config) {
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }
       ]
+    },
+    htmlReporter: {
+      outputDir: 'dist/unit_test_html',
+      templatePath: null,
+      focusOnFailures: true,
+      namedFiles: false,
+      pageTitle: 'Chameleon Unit Tests',
+      urlFriendlyName: false,
+      reportName: 'chameleon-unit-tests'
     }
     // logLevel: config.LOG_DEBUG
   })

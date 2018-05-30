@@ -271,7 +271,8 @@ export default {
       fetchEpisodeDetail: 'vod/fetchEpisodeDetail',
       checkAssetAgeRating: 'parentalRating/checkAssetAgeRating',
       parentalRating: 'parentalRating/parentalRatingVOD',
-      togglePopup: 'popup/toggle'
+      togglePopup: 'popup/toggle',
+      fetchDetail: 'vod/fetchDetail'
     }),
     ...mapMutations({
       updateParentalPlayerMode: 'parentalRating/UPDATE_PLAYER_MODE'
@@ -294,6 +295,9 @@ export default {
   },
   async created () {
     await this.fetchEpisodeDetail(this.$route.params.episodeId)
+    if (this.$route.meta.fromRoute === 'Favorites' || this.$route.meta.fromRoute === 'FavoritesSeeAll') {
+      this.fetchDetail(this.asset.seriesId)
+    }
     this.episodeId = this.$route.params.episodeId
     this.redirectTo = this.$route.params.seasonId
   }

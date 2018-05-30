@@ -8,6 +8,7 @@
       <li v-for="(item, index) in items"
         :key="index"
         :class="['item', {'is-active': (index === activeIndex)}, {'no-border': (index === activeIndex-1 || index === items.length-1)}]"
+        :id="`language${index}`"
         @click.prevent="handleClick(index)">
         {{ item }}
       </li>

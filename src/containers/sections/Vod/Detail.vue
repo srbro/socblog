@@ -198,7 +198,8 @@ export default {
       seasons: state => state.vod.seasons,
       catalogues: state => state.vod.catalogues,
       ageRating: state => state.parentalRating.ageRating,
-      previouslySelectedSeason: state => state.vod.selectedItems.vodDetailActiveSeason
+      previouslySelectedSeason: state => state.vod.selectedItems.vodDetailActiveSeason,
+      isSynopsisVisible: state => state.vod.isSynopsisVisible
     })
   },
   methods: {
@@ -407,6 +408,10 @@ export default {
         this.getSeasons({ serieId: assetId || this.$route.params.asset.id })
       ]).then(() => {
         if (!this.isSerie) this.buttonLevels.splice(3, 1)
+        if (this.isSynopsisVisible) {
+          let indexOfFull = this.buttonLevels.indexOf('full')
+          this.buttonLevels.splice(indexOfFull, 1)
+        }
       })
     },
     ...mapActions({

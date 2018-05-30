@@ -852,3 +852,8 @@ export const getProvisioningMode = () => {
 export const setProvisoningDone = () => {
   console.log('HAL PROVISIONG DONE')
 }
+
+export const getWrapperGitVersion = () => {
+  console.log('HAL wrapper git')
+  return null
+}

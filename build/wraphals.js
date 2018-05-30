@@ -104,8 +104,40 @@ const androidtv = {
   }
 }
 
+const stb = {
+  wrap: function ({ cfg, projectPath }) {
+
+    let response = {
+      outputPath: '',
+      outputFileName: '',
+      status: 1
+    }
+
+    let wrapCmd = `export ANDROID_HOME=${cfg.androidSdkLocation}; ${projectPath}/gradlew assembleStbDebug --stacktrace -p ${projectPath}`
+    log('wrapCmd: ', wrapCmd)
+    response.status = exec(wrapCmd).code
+
+    let outputPath = `${projectPath}/app/build/outputs/apk/stb/debug`
+    if (response.status === 0) {
+      let outputFileName = ls(`${outputPath}`)
+
+      if (outputFileName) {
+        response.outputPath = outputPath
+        //response.outputFileName = outputFileName.toString()
+        response.outputFileName = `app-stb-debug.apk`
+      }
+
+      log(`Wrap outputPath: ${outputPath}`)
+      log(`Wrap outputFileName: ${outputFileName}`)
+    }
+
+    return response
+  }
+}
+
 module.exports = {
   samsung,
   lg,
-  androidtv
+  androidtv,
+  stb
 }

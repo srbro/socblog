@@ -185,19 +185,45 @@ export const internalPlayVideo = (videoDesc) => {
   store.dispatch('corePlayer/setStarted', {streamId: streamProps.session})
   const stbMode = store.getters['auth/getStbMode']
   if (streamProps.media === MEDIA_CHANNEL || streamProps.media === MEDIA_DVB) {
-    streamVideo({ url, streamType: streamProps.streamType, streamId: streamProps.session, startTime: streamProps.startTime, originalNetworkId: streamProps.originalNetworkId, streamIdDvb: streamProps.transportStreamId, serviceId: streamProps.serviceId })
+    streamVideo({
+      url,
+      streamType: streamProps.streamType,
+      streamId: streamProps.session,
+      startTime: streamProps.startTime,
+      originalNetworkId: streamProps.originalNetworkId,
+      streamIdDvb: streamProps.transportStreamId,
+      serviceId: streamProps.serviceId,
+      drmRequired: streamProps.drmRequired
+    })
   } else if (streamProps.media === MEDIA_VOD) {
     streamVODVideo({
       url,
       streamType: streamProps.streamType,
       streamId: streamProps.session,
-      startTime: streamProps.startTime
+      startTime: streamProps.startTime,
+      drmRequired: streamProps.drmRequired
     })
   } else {
     if (streamProps.videoBitrate === 0) {
-      streamAudio({ url, streamType: streamProps.streamType, streamId: streamProps.session, originalNetworkId: streamProps.originalNetworkId, streamIdDvb: streamProps.transportStreamId, serviceId: streamProps.serviceId })
+      streamAudio({
+        url,
+        streamType: streamProps.streamType,
+        streamId: streamProps.session,
+        originalNetworkId: streamProps.originalNetworkId,
+        streamIdDvb: streamProps.transportStreamId,
+        serviceId: streamProps.serviceId,
+        drmRequired: streamProps.drmRequired
+      })
     } else {
-      streamVideo({ url, streamType: streamProps.streamType, streamId: streamProps.session, originalNetworkId: streamProps.originalNetworkId, streamIdDvb: streamProps.transportStreamId, serviceId: streamProps.serviceId })
+      streamVideo({
+        url,
+        streamType: streamProps.streamType,
+        streamId: streamProps.session,
+        originalNetworkId: streamProps.originalNetworkId,
+        streamIdDvb: streamProps.transportStreamId,
+        serviceId: streamProps.serviceId,
+        drmRequired: streamProps.drmRequired
+      })
     }
   }
 

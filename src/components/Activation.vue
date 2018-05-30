@@ -12,7 +12,7 @@
   </div>
 
     <div class="textActCode">{{ activationCode }}</div>
-    <div class="pin">{{ pin }}</div>
+    <div id="activationCode" class="pin">{{ pin }}</div>
     <div class="footer-text">{{ footerText1 }}</div>
     <div class="footer-text">{{ footerText2 }}</div>
     <!-- <div class="textActCode">{{ text }}</div>-->

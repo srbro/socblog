@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Vod from 'src/components/Detail/Vod'
+import store from 'src/vuex/store'
+import { loc } from 'helpers/localization'
+
+const RENDER_TIMEOUT = 1000
 
 describe('Vod.vue', () => {
   const propsData = {
@@ -36,7 +40,10 @@ describe('Vod.vue', () => {
     fullActive: true
   }
   const Ctor = Vue.extend(Vod)
-  const vm = new Ctor({ propsData }).$mount()
+  const vm = new Ctor({
+    propsData,
+    store
+  }).$mount()
 
   it('should display text', () => {
     expect(vm.$el.querySelector('.main-title').textContent).to.equal('Reporter')
@@ -73,5 +80,23 @@ describe('Vod.vue', () => {
     [...vm.$el.querySelectorAll('.buttons .text')].forEach(function (element, index) {
       expect(element.textContent).to.equal(propsData.buttons[index].text)
     })
+  })
+  it('should contain proper class', () => {
+    let nodes = vm.$el.querySelectorAll('.button:last-child')
+    let element = nodes[nodes.length - 1]
+    expect(element.classList.contains('button-full')).to.equal(true)
+  })
+  it('should display see full button text properly', () => {
+    let str = '  ' + loc('stb_ondemand_detailedscreen_synopsys_seefull') + ' »'
+    expect(vm.$el.querySelector('.button-full').textContent).to.equal(str)
+  })
+  it('should show/hide see full button', (done) => {
+    vm.$store.commit('vod/TOGGLE_SYNOPSIS_VISIBLE', false)
+    expect(vm.$el.querySelector('.button-full') !== null).to.equal(true)
+    vm.$store.commit('vod/TOGGLE_SYNOPSIS_VISIBLE', true)
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.button-full')).to.equal(null)
+      done()
+    }, RENDER_TIMEOUT)
   })
 })

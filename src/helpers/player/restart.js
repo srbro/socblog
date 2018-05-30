@@ -25,11 +25,11 @@ let replayStream = ({streamProps, media, corePlayer, startTime}) => {
       console.log('RESTART replayStream', url)
       // let streamType = streamProps.streamType === 'm3u8' || streamProps.streamType === 'm3u8v' ? 'hls' : 'dash'
       if (media === 2) {
-        streamAudio({ url, streamType: streamProps.streamType, streamId: newSession })
+        streamAudio({ url, streamType: streamProps.streamType, streamId: newSession, drmRequired: streamProps.drmRequired })
       } else if (media === 1) {
-        streamVideo({ url, streamType: streamProps.streamType, streamId: newSession })
+        streamVideo({ url, streamType: streamProps.streamType, streamId: newSession, drmRequired: streamProps.drmRequired })
       } else if (media === 3) {
-        streamVODVideo({ url, streamId: newSession, startTime })
+        streamVODVideo({ url, streamId: newSession, startTime, drmRequired: streamProps.drmRequired })
       }
     } else {
       console.log(`RESTART replayStream expired ${corePlayer.id} vs current ${currentCorePlayer.id}`)

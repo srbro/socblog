@@ -145,7 +145,12 @@ export default new VueRouter({
         }
       },
       { path: 'season-detail', component: SeasonDetail, name: 'SeasonDetail' },
-      { path: 'episode-detail', component: EpisodeDetail, name: 'EpisodeDetail' }
+      { path: 'episode-detail', component: EpisodeDetail, name: 'EpisodeDetail',
+        beforeEnter: (to, from, next) => {
+          to.meta.fromRoute = from.name
+          next()
+        }
+      }
     ] },
     { path: '/', redirect: '/no-nav/loading' }
   ]

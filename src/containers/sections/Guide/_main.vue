@@ -24,7 +24,7 @@
           :channel-id="channels[selectedItemsIndexes[1]] ? channels[selectedItemsIndexes[1]].id : 0"
           :currentCutvDelay="currentCutvDelay"
           :currentEventCutv="currentEventCutv"
-          :currentStartOverEnabled="currentChannel.startOverEnabled ? currentChannel.startOverEnabled : false"
+          :currentStartOverEnabled="currentChannel && currentChannel.startOverEnabled ? currentChannel.startOverEnabled : false"
           :event="detailActive ? epgEventDetail : {}"
           :goBack = "doBack"
           :selectedEvent="events[selectedItemsIndexes[3]]"
@@ -150,9 +150,12 @@ export default {
       return this.events[this.selectedItemsIndexes[3]] || {}
     },
     currentEventProgress () {
-      if (this.events.length === 0 || Object.keys(this.currentEvent).length === 0) return 0
+      let startTime = this.currentEvent && this.currentEvent.startTime
+      let endTime = this.currentEvent && this.currentEvent.endTime
 
-      return helpersCurrentEventProgress(this.currentEvent.startTime, this.currentEvent.endTime)
+      if (this.events.length === 0 || (this.currentEvent && Object.keys(this.currentEvent).length === 0)) return 0
+
+      return helpersCurrentEventProgress(startTime, endTime)
     },
     currentSelectionProgress () {
       return this.selectedColumnIndex >= this.columns.indexOf('events') ? this.currentEventProgress : 1
@@ -168,7 +171,7 @@ export default {
       return this.channels[this.selectedItemsIndexes[1]]
     },
     currentCutvDelay () {
-      return this.events[this.selectedItemsIndexes[3]].startTime < this.currentCutvDelayTime
+      return this.events[this.selectedItemsIndexes[3]] && this.events[this.selectedItemsIndexes[3]].startTime < this.currentCutvDelayTime
     },
     containerTransform () {
       let container3dTransform = 'translate3d(-1678rem, 0, 0)'
@@ -239,9 +242,9 @@ export default {
       this.handleKey('RIGHT')
     },
     epgFetcher () {
-      const channelId = this.channels[this.selectedItemsIndexes[1]].id
+      const channelId = this.channels[this.selectedItemsIndexes[1]] ? this.channels[this.selectedItemsIndexes[1]].id : 0
       const startTime = startOfDay(this.dates[this.selectedItemsIndexes[2]].startOfDay)
-      if (channelId === this.channels[this.selectedItemsIndexes[1]].id) {
+      if (channelId !== 0) {
         this.fetchEvents({
           channelId,
           startTime: startTime,

@@ -541,6 +541,7 @@ export const initHal = function () {
   } catch (err) {
     console.error('ERROR Get Device Group: ' + err)
   }
+  store.dispatch('software/updateBuildVersion')
 }
 
 export const getMac = function () {
@@ -762,13 +763,13 @@ export const timeTravelVOD = function ({ startTime }) {
   }
 }
 
-export const streamVODVideo = function ({url, streamId, startTime, originalNetworkId, streamIdDvb, serviceId}) {
+export const streamVODVideo = function ({url, streamId, startTime, originalNetworkId, streamIdDvb, serviceId, drmRequired}) {
   if (url) {
     startTime = startTime || 0
 
     try {
       localStreamId = streamId
-      ANDROMAN.playStream(url, 'stream_vod', startTime, originalNetworkId, streamIdDvb, serviceId)
+      ANDROMAN.playStream(url, 'stream_vod', startTime, originalNetworkId, streamIdDvb, serviceId, drmRequired)
     } catch (e) {
       console.log('streamVODVideo error detected', e)
     }
@@ -849,7 +850,7 @@ export const getPlayerInfoStatic = function () {
   return stbMode ? playerInfoDataStaticSTB : playerInfoDataStaticAndroidTV
 }
 
-export const streamVideo = function ({url, streamId, streamType, startTime, originalNetworkId, streamIdDvb, serviceId}) {
+export const streamVideo = function ({url, streamId, streamType, startTime, originalNetworkId, streamIdDvb, serviceId, drmRequired}) {
   try {
     var mediaUrl = null
     var engineStarter = ''
@@ -881,7 +882,7 @@ export const streamVideo = function ({url, streamId, streamType, startTime, orig
     if (mediaUrl) {
       try {
         localStreamId = streamId
-        ANDROMAN.playStream(mediaUrl, engineStarter, 0, originalNetworkId, streamIdDvb, serviceId)
+        ANDROMAN.playStream(mediaUrl, engineStarter, 0, originalNetworkId, streamIdDvb, serviceId, drmRequired)
       } catch (err) {
         console.log('HAL PlayVideo error detected')
       }
@@ -890,12 +891,12 @@ export const streamVideo = function ({url, streamId, streamType, startTime, orig
     console.error('ERROR returnVideoData: ' + err)
   }
 }
-export const streamAudio = ({url, streamId, streamType, startTime, originalNetworkId, streamIdDvb, serviceId}) => {
+export const streamAudio = ({url, streamId, streamType, startTime, originalNetworkId, streamIdDvb, serviceId, drmRequired}) => {
   var mediaUrl
   console.log('this is play radio player state = ')
   try {
     localStreamId = streamId
-    ANDROMAN.playStream(url, 'stream_radio', 0, originalNetworkId, streamIdDvb, serviceId)
+    ANDROMAN.playStream(url, 'stream_radio', 0, originalNetworkId, streamIdDvb, serviceId, drmRequired)
   } catch (err) {
     console.log('HAL Play Audio error detected')
   }
@@ -1038,4 +1039,17 @@ export const setProvisoningDone = (mode) => {
   } catch (err) {
     console.log('HAL Exit App error detected')
   }
+}
+
+let gitCommit = ''
+
+export const getWrapperGitVersion = function () {
+  if (!gitCommit) {
+    try {
+      gitCommit = ANDROMAN.getWrapperCommitHash()
+    } catch (err) {
+      console.error('ERROR getWrapperCommitHash: ' + err)
+    }
+  }
+  return gitCommit
 }

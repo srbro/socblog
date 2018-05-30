@@ -5,6 +5,7 @@
       :key="button"
       :active="index === activeButtonIndex"
       :icon="`player-${button}`"
+      :id="button"
       @click.native.prevent="handleClick(index)"
     />
   </div>

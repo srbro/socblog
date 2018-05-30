@@ -1,3 +1,4 @@
+import { getWrapperGitVersion } from 'hal'
 import ver from 'version'
 // import { fetchVersion } from 'helpers/api'
 /* global builder */
@@ -30,6 +31,13 @@ export default {
         window.location.reload(true)
       }
       */
+    },
+    updateBuildVersion ({state, commit}) {
+      if (state.buildVersion && getWrapperGitVersion()) {
+        const txtVersion = state.buildVersion
+        const indx = txtVersion.lastIndexOf('.')
+        commit('SET_BUILD_VERSION', builderInfo.devVersion = txtVersion.slice(0, indx) + '.' + getWrapperGitVersion() + txtVersion.slice(indx))
+      }
     }
   },
   mutations: {
@@ -39,6 +47,7 @@ export default {
     SET_RELEASE_VERSION (state, newReleaseVersion) { state.releaseVersion = newReleaseVersion },
     SET_PLATFORM_VERSION (state, newPlatformVersion) { state.PlatformVersion = newPlatformVersion },
     SET_MANUFACTURER (state, newManufacturer) { state.Manufacturer = newManufacturer },
-    SET_TVMODEL (state, newTvModel) { state.TvModel = newTvModel }
+    SET_TVMODEL (state, newTvModel) { state.TvModel = newTvModel },
+    SET_BUILD_VERSION (state, newBuildVersion) { state.buildVersion = newBuildVersion }
   }
 }

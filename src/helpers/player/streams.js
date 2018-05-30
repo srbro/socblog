@@ -99,7 +99,8 @@ export const calcStreamProps = ({videoDesc, streamId}) => {
     session: streamId || calcGUID(),
     originalNetworkId: getDvbInfoData(videoDesc.dvbInfo).originalNetworkId,
     serviceId: getDvbInfoData(videoDesc.dvbInfo).serviceId,
-    transportStreamId: getDvbInfoData(videoDesc.dvbInfo).transportStreamId
+    transportStreamId: getDvbInfoData(videoDesc.dvbInfo).transportStreamId,
+    drmRequired: videoDesc.drmRequired
   }
   if (store.state.player.mode === 'VOD') {
     desc.asset = videoDesc.publishingPoint[0].publishingPoint

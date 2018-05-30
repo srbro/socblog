@@ -24,6 +24,7 @@
         :key="item.id"
         :item="item"
         :is-selected="index === trimmedIndex && !fasterAnimation"
+        :id="automatedTestsIds(index)"
       />
     </template>
 
@@ -165,6 +166,9 @@ export default {
   methods: {
     deviceClass () {
       return deviceEPGClass()
+    },
+    automatedTestsIds (index) {
+      return index === this.trimmedIndex && !this.fasterAnimation ? 'firstChannel' : ''
     }
   }
 }

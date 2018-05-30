@@ -488,7 +488,7 @@ export const streamVideo = function ({url, streamType, streamId}) {
   // console.log(player.load(bitmovinMediaObj))
 
   const config = {
-    key: '502fb70ce612520a9c52c943f8e878e42d53c9a3ca77413f2eb2bd3c0b947827df882f2913d340fb42195b89764dd8db49ffb3ba29d41708',
+    key: '81b754a00eef1f8e243a1bfc3ae6344a2d53c9a3ca77413f2eb2bd3c0b947827df882f2913d340fb42195b89764dd8db49ffb3ba29d41708',
     abr: !0,
     clearkey: {},
     initialAbrIndex: 999,
@@ -542,7 +542,7 @@ const videoPlaying = function () {
 export const streamVODVideo = function ({ url, streamId, startTime }) {
   startTime = Math.round(startTime / 1000) || 0
   const config = {
-    key: '502fb70ce612520a9c52c943f8e878e42d53c9a3ca77413f2eb2bd3c0b947827df882f2913d340fb42195b89764dd8db49ffb3ba29d41708',
+    key: '81b754a00eef1f8e243a1bfc3ae6344a2d53c9a3ca77413f2eb2bd3c0b947827df882f2913d340fb42195b89764dd8db49ffb3ba29d41708',
     abr: !0,
     clearkey: {},
     initialAbrIndex: 999,
@@ -757,4 +757,9 @@ export const getProvisioningMode = () => {
 
 export const setProvisoningDone = () => {
   console.log('HAL PROVISIONG DONE')
+}
+
+export const getWrapperGitVersion = () => {
+  console.log('HAL wrapper git')
+  return null
 }

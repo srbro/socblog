@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:support-tv-provider-26.1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-tv-provider-26.1.0.aar/f32bad8916d40f35c9371c9061ce5772/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-tv-provider-26.1.0.aar/f32bad8916d40f35c9371c9061ce5772/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-tv-provider/26.1.0/db156aa7bdb98cf76c9732b5fb8d377e39dde179/support-tv-provider-26.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

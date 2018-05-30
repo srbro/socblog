@@ -41,6 +41,7 @@ export default {
     sortDir: 'DESC',
     vodSort: 'AZ',
     totalElements: null,
+    isSynopsisVisible: false,
     selectedItems: {
       seasonDetailActiveCardId: null,
       vodDetailActiveSeason: null,
@@ -294,6 +295,9 @@ export default {
     },
     UPDATE_VOD_SEE_ALL_GRID_SELECTED_CARD (state, newVal) {
       state.selectedItems.vodSeeAllGridSelectedCard = newVal
+    },
+    TOGGLE_SYNOPSIS_VISIBLE (state, newVal) {
+      state.isSynopsisVisible = newVal
     }
   }
 }

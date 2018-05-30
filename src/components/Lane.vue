@@ -13,6 +13,7 @@
       <li v-for="(item, index) in items"
         :class="navItemClass(index)"
         :key="index"
+        :id="automatedTestsIds(item)"
         @click.stop="watch(item)"
         @mouseenter="mouseEnter(index)"
         @mouseleave="mouseLeave(index)"
@@ -77,6 +78,15 @@ export default {
     }
   },
   methods: {
+    automatedTestsIds (item) {
+      if (item.id === 'guide' && this.type && this.type === 'main') {
+        return 'guide'
+      } else if (item.id === 'guide' && this.type && this.type === 'sub') {
+        return 'tvChannels'
+      } else if (item.id === 'radio' && this.type && this.type === 'sub') {
+        return 'radioStations'
+      }
+    },
     iconPath (index) {
       return `#${this.items[index].id + (index === this.selectedIndex ? '-active' : '')}`
     },

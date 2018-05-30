@@ -65,6 +65,8 @@ const wrap = async function (localPlatform, portalZipFile, outputZipPath, output
   let wrapperPath = path.resolve(__dirname, `../dist/${platform}_wrapper/`)
   let config = require('../config/' + productionBuild + '.json')[buildPlatform]
 
+    log('Production Build: ' + productionBuild)
+    log('Build platform: ' + buildPlatform)
     log('Wrap Output zip path: ' + outputZipPath)
     log('Wrap Output zip name: ' + outputZipName)
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chameleon-androidtv.iml" filepath="$PROJECT_DIR$/chameleon-androidtv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chameleon-androidtv-stb-develop.iml" filepath="$PROJECT_DIR$/chameleon-androidtv-stb-develop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viblast-2.13-release/viblast-2.13-release.iml" filepath="$PROJECT_DIR$/viblast-2.13-release/viblast-2.13-release.iml" />
+    </modules>
+  </component>
+</project>

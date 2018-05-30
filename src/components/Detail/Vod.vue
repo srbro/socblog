@@ -86,9 +86,9 @@
               <div class="small-title">{{ loc('ondemand_detailedscreen_synopsys') }}</div>
               <div class="main-text">
                 <div class="transparent-cover"></div>
-                <p class="synopsis">{{ synopsis }}</p>
+                <p ref="syn" class="synopsis">{{ synopsis }}</p>
               </div>
-              <custom-button class="button-full" :active="fullActive" dark :buttonClick="openFullText">{{ loc('stb_ondemand_detailedscreen_synopsys_seefull') }} »</custom-button>
+              <custom-button v-if="!isSynopsisVisible" class="button-full" :active="fullActive" dark :buttonClick="openFullText">{{ loc('stb_ondemand_detailedscreen_synopsys_seefull') }} »</custom-button>
             </template>
           </div>
         </div>
@@ -109,6 +109,7 @@
 
 <script>
 import common from './_common'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'DetailVod',
@@ -130,7 +131,10 @@ export default {
       return [
         'background-image'
       ]
-    }
+    },
+    ...mapState({
+      isSynopsisVisible: state => state.vod.isSynopsisVisible
+    })
   },
   props: {
     active: Boolean,
@@ -169,6 +173,14 @@ export default {
     vodPoster: String,
     year: Number,
     metascoreRating: Number
+  },
+  methods: {
+    ...mapMutations({
+      toggleSynopsisVisible: 'vod/TOGGLE_SYNOPSIS_VISIBLE'
+    })
+  },
+  updated () {
+    this.toggleSynopsisVisible(this.$refs.syn.offsetHeight === this.$refs.syn.scrollHeight)
   }
 }
 </script>
